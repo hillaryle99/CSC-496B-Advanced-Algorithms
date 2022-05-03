@@ -193,23 +193,7 @@ class PathFinder(object):
         """
         return NotImplemented
         
-    ### SOLUTION BLOCK
     def dijkstra(self, weight, nodes, source, destination):
-        """Performs Dijkstra's algorithm until it finds the shortest
-        path from source to destination in the graph with nodes and edges.
-        Assumes that all weights are non-negative.
-    
-        Args:
-            weight: function for calculating the weight of edge (u, v). 
-            nodes: list of all nodes in the network.
-            source: the source node in the network.
-            destination: the destination node in the network.
-         
-        Returns:
-            A tuple of the path as a list of nodes from source to destination 
-            and the number of visited nodes.
-        """
-    
         # Initialize.
         for node in nodes:
             node.parent = None
@@ -245,7 +229,6 @@ class PathFinder(object):
         p.reverse()
         return (p, num_visited)
 
-    ### END SOLUTION BLOCK    
         
     @staticmethod
     def from_file(file, network):
