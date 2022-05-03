@@ -1,0 +1,13 @@
+KLENGTH-BELLMAN-FORD(G, s, k)
+  for each node v ∈ G.V
+    v.d = ∞
+  s.d=0
+  for i= 1 to k 
+    T={}
+    for each edge(u, v)∈G.E
+      if v.d > u.d+w(u, v)
+        T[v] =u.d+w(u, v)
+    for each v ∈ T
+      v.d=T[v]
+      
+Time analysis: Initialization takes O(V) time. Both checking and updating take O(E) time, and there are k iterations. So total time is O(kE+V).
